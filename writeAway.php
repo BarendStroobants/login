@@ -15,6 +15,7 @@ function writeAway(){
         $video = $_POST['video'];
         $quote = $_POST['quote'];
         $quoteAuthor = $_POST['quote_author'];
+
         $statement = $con->prepare ('INSERT INTO student (first_name, last_name, username, gender, linkedin, github, email, preferred_language, avatar, video, quote, quote_author) VALUES (:first_name,:last_name,:username,:gender,:linkedin,:github,:email,:preferred_language,:avatar,:video,:quote,:quote_author)');
 
         try {
