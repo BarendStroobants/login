@@ -33,7 +33,7 @@ require 'connection.php';
             <td><?php echo $row['last_name'] ?></td>
             <td><?php echo $row['email'] ?></td>
             <td><?php echo $row['preferred_language'] ?></td>
-            <td><a href="profile.php"><button>Visit Page</button></a></td>
+            <td><a href="profile.php?<?php echo $row['id']?>"><button>Visit Page</button></a></td>
         </tr>
     <?php endforeach; ?>
 </table>

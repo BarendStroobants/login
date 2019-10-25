@@ -54,7 +54,6 @@
     <br>
     <button>submit</button>
 </form>
-
 <a href="studentInfo.php"><button>See Info</button></a>
 
 </body>
