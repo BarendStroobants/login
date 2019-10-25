@@ -12,6 +12,8 @@ require 'connection.php';
 </head>
 <body>
 
+<h1>Student Info</h1>
+
 <table style="width: 90%">
     <tr>
         <th>ID</th>
@@ -31,7 +33,7 @@ require 'connection.php';
             <td><?php echo $row['last_name'] ?></td>
             <td><?php echo $row['email'] ?></td>
             <td><?php echo $row['preferred_language'] ?></td>
-            <td><?php echo $row['linkedin'] ?></td>
+            <td><a href="profile.php"><button>Visit Page</button></a></td>
         </tr>
     <?php endforeach; ?>
 </table>

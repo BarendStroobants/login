@@ -11,6 +11,7 @@ require 'whatIsHappening.php';
 require 'insert.php';
 require 'writeAway.php';
 require 'studentInfo.php';
+require 'profile.php';
 
 session_start();
 
