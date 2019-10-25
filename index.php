@@ -14,26 +14,27 @@ session_start();
 
 whatIsHappening();
 
-$con = openConnection();
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $con = openConnection();
+    $firstName = $_POST['first_name'];
+    $lastName = $_POST['last_name'];
+    $username = $_POST['username'];
+    $gender = $_POST['gender'];
+    $linkedin = $_POST['linkedin'];
+    $github = $_POST['github'];
+    $email = $_POST['email'];
+    $preferredLanguage = $_POST['preferred_language'];
+    $avatar = $_POST['avatar'];
+    $video = $_POST['video'];
+    $quote = $_POST['quote'];
+    $quoteAuthor = $_POST['quote_author'];
+    $statement = $con->prepare ('INSERT INTO student (first_name, last_name, username, gender, linkedin, github, email, preferred_language, avatar, video, quote, quote_author) VALUES (:first_name,:last_name,:username,:gender,:linkedin,:github,:email,:preferred_language,:avatar,:video,:quote,:quote_author)');
 
-if ($_SERVER["REQUEST_METHOD"] === "GET") {
-    $connection = openConnection();
-    $firstName = $_GET['first_name'];
-    $lastName = $_GET['last_name'];
-    $username = $_GET['username'];
-    $gender = $_GET['gender'];
-    $linkedin = $_GET['linkedin'];
-    $github = $_GET['github'];
-    $email = $_GET['email'];
-    $preferredLanguage = $_GET['preferred_language'];
-    $avatar = $_GET['avatar'];
-    $video = $_GET['video'];
-    $quote = $_GET['quote'];
-    $quoteAuthor = $_GET['quote_author'];
-
-
-    $sqlCmd = 'INSERT INTO student (first_name, last_name, username, gender, linkedin, github, email, preferred_language, avatar, video, quote, quote_author) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,now())';
-    $connection->prepare($sqlCmd)->execute([$firstName, $lastName, $username, $gender, $linkedin, $github, $email, $preferredLanguage, $avatar,
-        $video, $quote, $quoteAuthor]);
+    try {
+        $var = $statement->execute([$firstName, $lastName, $username, $gender, $linkedin, $github, $email,$preferredLanguage, $avatar, $video, $quote, $quoteAuthor]);
+        echo $var;
+    } catch (\PDOException $e) {
+        throw new \PDOException($e->getMessage(), (int)$e->getCode());
+    }
 
 }

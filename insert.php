@@ -13,7 +13,7 @@
 </head>
 <body>
 
-<form method="get">
+<form method="POST">
     <label for="first_name">First name:</label>
     <input type="text" name="first_name">
     <br>
