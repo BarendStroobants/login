@@ -10,6 +10,7 @@ require 'connection.php';
 require 'whatIsHappening.php';
 require 'insert.php';
 require 'writeAway.php';
+require 'studentInfo.php';
 
 session_start();
 
