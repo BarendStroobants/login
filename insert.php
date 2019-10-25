@@ -53,5 +53,46 @@
     <button>submit</button>
 </form>
 
+<table style="width: 90%">
+    <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Pref. Lang.</th>
+        <th>Pers. Page</th>
+    </tr>
+    <tr>
+        <td>fetch id</td>
+        <td><?php $statement = $pdo->query('SELECT first_name FROM student');
+            foreach ($statement as $row)
+            {
+                echo $row['first_name'] . "\n";
+            } ?></td>
+        <td><?php $statement = $pdo->query('SELECT last_name FROM student');
+            foreach ($statement as $row)
+            {
+                echo $row['last_name'] . "\n";
+            } ?></td>
+        <td><?php $statement = $pdo->query('SELECT email FROM student');
+            foreach ($statement as $row)
+            {
+                echo $row['email'] . "\n";
+            } ?></td>
+        <td><?php $statement = $pdo->query('SELECT preferred_language FROM student');
+            foreach ($statement as $row)
+            {
+                echo $row['preferred_languages'] . "\n";
+            } ?></td>
+        <td><?php $statement = $pdo->query('SELECT linkedin FROM student');
+            foreach ($statement as $row)
+            {
+                echo $row['linkedin'] . "\n";
+            } ?></td>
+    </tr>
+</table>
+
+
+
 </body>
 </html>

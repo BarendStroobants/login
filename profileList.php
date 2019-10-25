@@ -13,24 +13,7 @@
 </head>
 <body>
 
-<table style="width: 90%">
-    <tr>
-        <th>ID</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Email</th>
-        <th>Pref. Lang.</th>
-        <th>Pers. Page</th>
-    </tr>
-    <tr>
-        <td>fetch id</td>
-        <td>fetch F. Name</td>
-        <td>fetch L. Name</td>
-        <td>fetch email</td>
-        <td>fetch P. L.</td>
-        <td>fetch P. P.</td>
-    </tr>
-</table>
+
 
 </body>
 </html>
