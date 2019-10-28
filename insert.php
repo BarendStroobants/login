@@ -9,7 +9,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="insert.css">
+    <link rel="stylesheet" href="/style.css/insert.css">
     <title>Form</title>
 </head>
 <body>
@@ -17,16 +17,13 @@
 <h1>Student-Book (atw-lamarr-2-13 / 2019)</h1>
 
 <form method="POST">
-    <label for="first_name">First name:</label>
-    <input type="text" name="first_name">
+    <input type="text" name="first_name" placeholder="Pleas enter first name">
     <hr>
     <br>
-    <label for="last_name">Last name:</label>
-    <input type="text" name="last_name">
+    <input type="text" name="last_name" placeholder="Pleas enter last name">
     <hr>
     <br>
-    <label for="username">Username:</label>
-    <input type="text" name="username">
+    <input type="text" name="username" placeholder="Pleas enter user name">
     <hr>
     <br>
     <label for="gender">Gender:</label>
@@ -36,16 +33,13 @@
     </select>
     <hr>
     <br>
-    <label for="linkedin">LinkedIn:</label>
-    <input type="text" name="linkedin">
+    <input type="text" name="linkedin" placeholder="pleas enter url link to linkedin">
     <hr>
     <br>
-    <label for="github">Github:</label>
-    <input type="text" name="github">
+    <input type="text" name="github" placeholder="Pleas enter url link to Github">
     <hr>
     <br>
-    <label for="email">Email:</label>
-    <input type="text" name="email">
+    <input type="text" name="email" placeholder="Pleas enter email">
     <hr>
     <br>
     <label for="preferred_language">Preferred language:</label>
@@ -57,23 +51,20 @@
         <option value="es">Espanol</option>
         <option value="ar">Arabic</option>
         <option value="ko">Korean</option>
+        <option value="it">Italian</option>
     </select>
     <hr>
     <br>
-    <label for="avatar">Avatar:</label>
-    <input type="text" name="avatar">
+    <input type="text" name="avatar" placeholder="Pleas enter url link to avatar">
     <hr>
     <br>
-    <label for="video">Video:</label>
-    <input type="text" name="video">
+    <input type="text" name="video" placeholder="Pleas enter url link to Youtube video">
     <hr>
     <br>
-    <label for="quote">Quote:</label>
-    <input type="text" name="quote">
+    <input type="text" name="quote" placeholder="Pleas enter a quote">
     <hr>
     <br>
-    <label for="quote_author">Quote author:</label>
-    <input type="text" name="quote_author">
+    <input type="text" name="quote_author" placeholder="Who wrote the quote">
     <hr>
     <br>
     <button>submit</button>

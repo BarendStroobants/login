@@ -9,7 +9,7 @@ require 'connection.php';
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="/style.css/profile.css">
     <title>Profile</title>
 </head>
 <body>
@@ -37,7 +37,7 @@ $user=$sqlProfile->fetch()
 <br>
 <h2>Youtube:</h2>
 <!-- TODO: make youtube video show on page -->
-<iframe width="560" height="315" src="<?php $user['video'] ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="<?php echo str_replace('watch?v=', 'embed/', $user['video'])?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <br>
 <a href="<?php echo $user['linkedin'] ?>"><button>Find me @ LinkedIn</button></a>
 <br>

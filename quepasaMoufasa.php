@@ -1,6 +1,6 @@
 <?php
 
-function whatIsHappening(){
+function quepasaMoufasa(){
     echo '<h2>$_GET</h2>';
     var_dump($_GET);
     echo '<h2>$_POST</h2>';
