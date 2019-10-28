@@ -1,5 +1,5 @@
 <?php
-
+require 'connection.php';
 ?>
 
 <!doctype html>
@@ -12,16 +12,30 @@
     <title>Profile</title>
 </head>
 <body>
+<?php
+$con = openConnection();
 
+$id = $_GET['id'];
+
+$sqlProfile = $con->prepare( 'SELECT student.id, student.username, student.avatar, student.first_name, student.last_name FROM student WHERE id = ?');
+
+$sqlProfile->execute($id);
+
+
+foreach ($con->query($sqlProfile) as $field):
+
+?>
 <h1>Profile Page</h1>
-
-<h2><?php echo $_POST['username'] ?></h2>
-
-<img src="<?php echo $_POST['avatar'] ?>" alt="profile picture">
-
-<p>Welcome to your profile <?php echo $_POST['first_name'] . $_POST['last_name'] ?></p>
-
+<br>
+<h2><?php echo $field['username'] ?></h2>
+<br>
+<img src="<?php echo $field['avatar'] ?>" alt="profile picture">
+<br>
+<p>Welcome to your profile <?php echo $field['first_name'] . $field['last_name'] ?></p>
+<br>
 <a href="studentInfo.php"><button>Back To Student List</button></a>
-
+<br>
+<a href="index.php"><button>Back To Form</button></a>
+<?php endforeach; ?>
 </body>
 </html>
