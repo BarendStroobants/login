@@ -1,0 +1,12 @@
+body {
+    max-width: 90%;
+    margin-top: auto;
+    margin-left: 10%;
+    margin-bottom: auto;
+    margin-right: 10%;
+    background-image: url("https://s3-eu-west-1.amazonaws.com/wbm.thumbnail/dissolve/1200/378293.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Open Sans', sans-serif;
+}

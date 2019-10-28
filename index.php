@@ -13,6 +13,6 @@ require 'insert.php';
 
 session_start();
 
-whatIsHappening();
+//whatIsHappening();
 
 writeAway();
