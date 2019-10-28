@@ -15,27 +15,43 @@ require 'connection.php';
 <?php
 $con = openConnection();
 
-$id = $_GET['id'];
+$id = $_GET['user'];
 
-$sqlProfile = $con->prepare( 'SELECT student.id, student.username, student.avatar, student.first_name, student.last_name FROM student WHERE id = ?');
+$sqlProfile = $con->prepare( 'SELECT * FROM student WHERE ID=:id');
 
-$sqlProfile->execute($id);
+$sqlProfile->execute(['id'=>$id]);
 
-
-foreach ($con->query($sqlProfile) as $field):
+$user=$sqlProfile->fetch()
 
 ?>
 <h1>Profile Page</h1>
 <br>
-<h2><?php echo $field['username'] ?></h2>
+<h2><?php echo $user['id'] ?></h2>
 <br>
-<img src="<?php echo $field['avatar'] ?>" alt="profile picture">
+<h2><?php echo $user['username'] ?></h2>
 <br>
-<p>Welcome to your profile <?php echo $field['first_name'] . $field['last_name'] ?></p>
+<img src="<?php echo $user['avatar'] ?>" alt="profile picture">
+<br>
+<p>Welcome to your profile <?php echo $user['first_name'] . ' ' . $user['last_name'] ?></p>
+<br>
+<!-- TODO: make youtube video show on page -->
+<iframe width="560" height="315" src="<?php $user['video'] ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<br>
+<a href="<?php echo $user['linkedin'] ?>"><button>LinkedIn</button></a>
+<br>
+<a href="<?php echo $user['github'] ?>"><button>Github</button></a>
+<br>
+<p>send me an email at: <?php echo $user['email'] ?></p>
+<br>
+<p>your preferred language is: <?php echo $user['preferred_language'] ?></p>
+<br>
+<quote><?php echo $user['quote'] ?></quote>
+<br>
+<quote><?php echo $user['quote_author'] ?></quote>
 <br>
 <a href="studentInfo.php"><button>Back To Student List</button></a>
 <br>
 <a href="index.php"><button>Back To Form</button></a>
-<?php endforeach; ?>
+
 </body>
 </html>
